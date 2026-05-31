@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f7f4ec;
+  --bg-soft: #f7f4ec;
+  --bg-elevated: #f7f4ec;
+  --ink: #1b1a17;
+  --ink-muted: #6b6659;
+  --ink-faint: #b1aa9a;
+  --line: #e2dccc;
+  --line-strong: #c8c0ac;
+  --accent: #6f8a63;
+  --accent-soft: #dbe4d0;
+  --accent-ink: #f7f4ec;
+  --invert-bg: #1b1a17;
+  --invert-ink: #f7f4ec;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #242019;
+  --bg-soft: #242019;
+  --bg-elevated: #242019;
+  --ink: #f3eee0;
+  --ink-muted: #a39d8c;
+  --ink-faint: #6b6557;
+  --line: #3a352e;
+  --line-strong: #4c463c;
+  --accent: #acc096;
+  --accent-soft: #2f3a2b;
+  --accent-ink: #18170f;
+  --invert-bg: #f3eee0;
+  --invert-ink: #1b1a17;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #242019;
+    --bg-soft: #242019;
+    --bg-elevated: #242019;
+    --ink: #f3eee0;
+    --ink-muted: #a39d8c;
+    --ink-faint: #6b6557;
+    --line: #3a352e;
+    --line-strong: #4c463c;
+    --accent: #acc096;
+    --accent-soft: #2f3a2b;
+    --accent-ink: #18170f;
+    --invert-bg: #f3eee0;
+    --invert-ink: #1b1a17;
+    color-scheme: dark;
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+button,
+a,
+input,
+[role="button"] {
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: 0ms;
+  transition-timing-function: linear;
+}
+
+input::placeholder {
+  color: var(--ink-faint);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 100;
+  letter-spacing: -0.01em;
+}
+
+.font-display-medium {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 500;
+}
+
+/* Nav reveal fade — used only on scroll-triggered nav, not hover */
+.nav-fade {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
